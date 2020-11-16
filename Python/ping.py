@@ -12,7 +12,7 @@ def send_message():
 def subscribe(topic='002', host='localhost', port=1883, keepalive=60):
     
     def on_connect(client, userdata, flags, rc):
-        print("Conne4cted with result code "+str(rc))
+        print("Connected with result code "+str(rc))
         client.subscribe(topic)
 
     def on_message(client, userdata, msg):
