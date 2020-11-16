@@ -1,0 +1,40 @@
+{
+    "_": {
+        "editor": {
+            "view": {
+                "view-show-grid": true,
+                "view-snap-grid": true,
+                "view-grid-size": "20",
+                "view-node-status": true,
+                "view-node-show-label": true,
+                "view-show-tips": false
+            },
+            "context": {
+                "flowRefresh": false
+            },
+            "sidebar": {
+                "order": [
+                    "debug",
+                    "context",
+                    "dashboard",
+                    "info",
+                    "config",
+                    "help"
+                ]
+            }
+        },
+        "menu-menu-item-sidebar": true,
+        "menu-menu-item-palette": true,
+        "menu-deploymenu-item-flow": true,
+        "menu-deploymenu-item-full": false,
+        "git": {
+            "user": {
+                "name": "Florian Fuchs",
+                "email": "florianfuchs2005@web.de"
+            },
+            "workflow": {
+                "mode": "auto"
+            }
+        }
+    }
+}
