@@ -17,7 +17,6 @@
         "node-red-contrib-volumio": "0.0.2",
         "node-red-contrib-wifiscan": "0.0.2",
         "node-red-dashboard": "~2.23.4",
-        "node-red-node-mongodb": "~0.2.3",
         "node-red-node-openweathermap": "~0.3.2",
         "node-red-node-pi-gpio": "^1.2.0",
         "node-red-node-ping": "^0.2.1",

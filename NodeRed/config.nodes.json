@@ -957,25 +957,6 @@
             }
         }
     },
-    "node-red-node-mongodb": {
-        "name": "node-red-node-mongodb",
-        "version": "0.2.3",
-        "local": true,
-        "nodes": {
-            "mongo": {
-                "name": "mongo",
-                "types": [
-                    "mongodb",
-                    "mongodb out",
-                    "mongodb in"
-                ],
-                "enabled": true,
-                "local": true,
-                "module": "node-red-node-mongodb",
-                "file": "/home/pi/.node-red/node_modules/node-red-node-mongodb/66-mongodb.js"
-            }
-        }
-    },
     "node-red-contrib-viera": {
         "name": "node-red-contrib-viera",
         "version": "0.0.2",
