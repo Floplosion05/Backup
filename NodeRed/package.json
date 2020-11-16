@@ -1,0 +1,30 @@
+{
+    "name": "node-red-project",
+    "description": "A Node-RED Project",
+    "version": "0.0.1",
+    "private": true,
+    "dependencies": {
+        "node-red-contrib-counter": "~0.1.5",
+        "node-red-contrib-cpu": "0.0.4",
+        "node-red-contrib-device-stats": "~1.1.2",
+        "node-red-contrib-google-oauth-calendar": "~0.1.1",
+        "node-red-contrib-googlehome": "0.0.10",
+        "node-red-contrib-hs100": "~0.4.0",
+        "node-red-contrib-moment": "~4.0.0",
+        "node-red-contrib-presence-faker": "~1.8.0",
+        "node-red-contrib-ui-level": "~0.1.33",
+        "node-red-contrib-viera": "0.0.2",
+        "node-red-contrib-volumio": "0.0.2",
+        "node-red-contrib-wifiscan": "0.0.2",
+        "node-red-dashboard": "~2.23.4",
+        "node-red-node-mongodb": "~0.2.3",
+        "node-red-node-openweathermap": "~0.3.2",
+        "node-red-node-pi-gpio": "^1.2.0",
+        "node-red-node-ping": "^0.2.1",
+        "node-red-node-random": "^0.2.0",
+        "node-red-node-serialport": "~0.11.1",
+        "node-red-node-smooth": "^0.1.2",
+        "node-red-node-suncalc": "~1.0.1",
+        "node-red-node-ui-list": "~0.3.4"
+    }
+}
