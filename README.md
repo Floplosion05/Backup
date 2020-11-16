@@ -24,9 +24,9 @@ network={
 - 1 . ```sudo apt install mosquitto mosquitto-clients python3 python3-pip```
 - 2 . ``````
 ## (Optional) Setting up SMB
-- 1. 
+- 1 . 
 
 ## Installation of Python libraries via pip and git
-- 1 . ```pip3 install paho-mqtt, bs4, requests```
+- 1 . ```pip3 install paho-mqtt bs4 requests```
 - 2 . ```git clone [https://github.com/Floplosion05/MerossIot](https://github.com/Floplosion05/MerossIot)```
 - 3 . 
