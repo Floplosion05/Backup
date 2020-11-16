@@ -26,7 +26,12 @@ network={
 ## (Optional) Setting up SMB
 - 1 . 
 
+## (optional) Setting up a Webserver with Apache2
+
 ## Installation of Python libraries via pip and git
 - 1 . ```pip3 install paho-mqtt bs4 requests```
 - 2 . ```git clone ```[```https://github.com/Floplosion05/MerossIot```](https://github.com/Floplosion05/MerossIot)
-- 3 . 
+- 3 . ```cd MerossIot/```
+- 4 . ```sudo python3 setup.py install```
+
+## Installation of the necessary scripts
