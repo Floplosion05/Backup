@@ -1,0 +1,16 @@
+{
+	"turn_on": ["75,0xC1AA09F6,32"],
+	"turn_off": ["75,0xC1AA8976,32"],
+	"volume_up": ["75,0xC1AA19E6,32"],
+	"volume_mute": ["75,0xC1AAB54A,32"],
+	"volume_down": ["75,0xC1AA9966,32"],
+	"menu": ["75,0xC1AA59A6,32"],
+	"menu_up": ["75,0xC1AA0DF2,32"],
+	"menu_down": ["75,0xC1AA4DB2,32"],
+	"menu_right": ["75,0xC1AA8D72,32"],
+	"menu_left": ["75,0xC1AACD32,32"],
+	"menu_ok": ["75,0xC1AAA15E,32"],
+	"menu_esc": ["75,0xC1AA21DE,32"],
+	"macro_normal": ["75,0xC1AA59A6,32", "75,0xC1AA8D72,32", "75,0xC1AA0DF2,32", "75,0xC1AA0DF2,32", "75,0xC1AA0DF2,32", "75,0xC1AAA15E,32", "75,0xC1AA0DF2,32", "75,0xC1AAA15E,32", "75,0xC1AA59A6,32"],
+	"macro_eco": ["75,0xC1AA59A6,32", "75,0xC1AA8D72,32", "75,0xC1AA0DF2,32", "75,0xC1AA0DF2,32", "75,0xC1AA0DF2,32", "75,0xC1AAA15E,32", "75,0xC1AA0DF2,32", "75,0xC1AAA15E,32", "75,0xC1AA59A6,32"]
+}
