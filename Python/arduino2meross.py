@@ -10,8 +10,8 @@ import socket
 import json
 
 REMOTE_SERVER = "www.google.com"
-EMAIL = "surfandsail@gmx.de"
-PASSWORD = "Ge1d0derLiebe"
+EMAIL = "<<YOUR EMAIL HERE>>"
+PASSWORD = "<<YOUR PASSWOR HERE>>"
 
 plugs = []
 devices = []
