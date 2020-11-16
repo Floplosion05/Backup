@@ -27,6 +27,6 @@ network={
 - 1. 
 
 ## Installation of Python libraries via pip and git
-- 1. ```pip3 install paho-mqtt, bs4, requests```
-- 2. ```git clone [https://github.com/Floplosion05/MerossIot](https://github.com/Floplosion05/MerossIot)```
-- 3. 
+- 1 . ```pip3 install paho-mqtt, bs4, requests```
+- 2 . ```git clone [https://github.com/Floplosion05/MerossIot](https://github.com/Floplosion05/MerossIot)```
+- 3 . 
