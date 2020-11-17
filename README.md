@@ -1,5 +1,6 @@
 # Backup
 Wherever there is something ```<<encapsulated>>``` you have to fill in your own credentials.
+
 ## Preparation
  - 1 . Download [Raspberry Pi Imager](https://downloads.raspberrypi.org/imager/imager_1.4.exe) and install Raspberrypi OS Lite 32-Bitwith it on an SD card
  - 2 . Add an empty file called ssh with no extension in the root directory of the new flashed sd card
@@ -19,8 +20,11 @@ network={
  - 5 . Open cmd and enter ```ssh pi@<<your raspberrypi's ip>>``` and when asked to type the default password ```raspberry```
  - 6 . As soon as you're connected to the pi via ssh enter ```passwd``` and change the default password
  - 7 . Run ```sudo get update``` and ```sudo get upgrade```
- - 8 . If ou're using a normal RaspberryPi:\nRun ```sudo raspi-config``` go to ```System Options(1)``` and then to ```Network at boot(S6)``` and confirm by choosing ```yes``` then leave the config by selecting ```Finish```
+ - 8 . If you're using a normal RaspberryPi:
+ 
+ Run ```sudo raspi-config``` go to ```System Options(1)``` and then to ```Network at boot(S6)``` and confirm by choosing ```yes``` then leave the config by selecting ```Finish```
        If you're using a Raspberrypi Zero:
+
 Run ```sudo raspi-config``` go to ```Boot Options(3)``` and then to ```Network at boot(B2)``` and confirm by choosing ```yes``` then leave the config by selecting ```Finish```
 
 ## Installation of linux packages via apt
