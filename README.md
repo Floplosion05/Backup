@@ -20,10 +20,13 @@ network={
  - 5 . Open cmd and enter ```ssh pi@<<your raspberrypi's ip>>``` and when asked to type the default password ```raspberry```
  - 6 . As soon as you're connected to the pi via ssh enter ```passwd``` and change the default password
  - 7 . Run ```sudo get update``` and ```sudo get upgrade```
- - 8 . If you're using a normal RaspberryPi:
+ - 8 .
+ 
+ If you're using a normal RaspberryPi:
  
  Run ```sudo raspi-config``` go to ```System Options(1)``` and then to ```Network at boot(S6)``` and confirm by choosing ```yes``` then leave the config by selecting ```Finish```
-       If you're using a Raspberrypi Zero:
+
+If you're using a Raspberrypi Zero:
 
 Run ```sudo raspi-config``` go to ```Boot Options(3)``` and then to ```Network at boot(B2)``` and confirm by choosing ```yes``` then leave the config by selecting ```Finish```
 
@@ -68,7 +71,7 @@ sudo chown -R -f www-data:www-data /var/www/html
 
 ## Creating a [Cronjob](https://www.raspberrypi.org/documentation/linux/usage/cron.md)
 - 1 .```crontab -e```
-     Normally You will be prompted to select your editor of choice, I just use nano and type ```1```
+     Normally you will be prompted to select your editor of choice, I just use nano and type ```1```
 - 2 .At the bottom of the file add this line ```@reboot sh /home/pi/autostart/autostart.sh >/home/pi/Logs/cronlog.txt 2>&1```
 - 3 .Save and exit, when using nano do so by hitting ```Crtl+X```, ```Y``` and ```Enter```
 - 4 .You can check the cronjob by typing ```crontab -l```. This should return smething like this:
