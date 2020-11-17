@@ -25,7 +25,7 @@ network={
 - Run ```sudo get update``` and ```sudo get upgrade```
 - If you're using a regular Raspberry Pi:
       - Run ```sudo raspi-config``` go to ```System Options(1)``` and then to ```Network at boot(S6)``` and confirm by choosing ```yes``` then leave the config by selecting ```Finish```
-- 9 .If you're using a Raspberry Pi Zero:
+- If you're using a Raspberry Pi Zero:
       - Run ```sudo raspi-config``` go to ```Boot Options(3)``` and then to ```Network at boot(B2)``` and confirm by choosing ```yes```.
       
      Then leave the config by selecting ```Finish```
