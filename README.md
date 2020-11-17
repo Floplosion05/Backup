@@ -29,7 +29,7 @@ Run ```sudo raspi-config``` go to ```Boot Options(3)``` and then to ```Network a
 
 ## Installation of the necessary scripts
 - 1 .```mkdir /home/pi/Documents; mkdir /home/pi/autostart; mkdir /home/pi/Logs; cd /home/pi/Documents; git clone https://github.com/Floplosion05/Backup; cp -r Backup/* /home/pi/Documents; rm -r -f Backup/; cd /home/pi/Documents; rm -f README.md; cp autostart/* /home/pi/autostart; rm -r -f autostart/```
-- 2 .Don't forget to change ur meross cloud credentials in line [12](https://github.com/Floplosion05/Backup/Python/arduino2meross.py#L12) of the arduino2meross.py file
+- 2 .Don't forget to change ur meross cloud credentials in line [13, 14](https://github.com/Floplosion05/Backup/blob/main/Python/arduino2meross.py#L13) of the arduino2meross.py file
 
 ## (Optional) Setting up [SMB](https://pimylifeup.com/raspberry-pi-samba/)
 - 1 . ```sudo apt install samba samba-common-bin```
