@@ -98,3 +98,4 @@ sudo chown -R -f www-data:www-data /var/www/html
 ```
 ## Setting up Node-Red
 - Run ```bash <(curl -sL https://raw.githubusercontent.com/node-red/linux-installers/master/deb/update-nodejs-and-nodered)``` and confirm the following two questions with y for yes
+- ```sudo systemctl enable nodered.service; sudo systemctl disable nodered.service```
