@@ -19,13 +19,13 @@ network={
 }
 ```
    After powering the unit, give it some time to boot up
-- Get the IP of your raspberrypi via your router
-- Open Cmd and enter ```ssh pi@<<your raspberrypi's ip>>``` and when asked to type the default password ```raspberry```
-- As soon as you're connected to the pi via ssh enter ```passwd``` and change the default password
+- Get the IP of your raspberry Pi via your router
+- Open Cmd and enter ```ssh pi@<<your raspberrypi's ip>>``` and when prompted provide the default password ```raspberry```
+- Once you're connected to the Pi via ssh, enter ```passwd``` and change the default password
 - Run ```sudo get update``` and ```sudo get upgrade```
-- If you're using a regular RaspberryPi:
+- If you're using a regular Raspberry Pi:
       - Run ```sudo raspi-config``` go to ```System Options(1)``` and then to ```Network at boot(S6)``` and confirm by choosing ```yes``` then leave the config by selecting ```Finish```
-- 9 .If you're using a RaspberryPi Zero:
+- 9 .If you're using a Raspberry Pi Zero:
       - Run ```sudo raspi-config``` go to ```Boot Options(3)``` and then to ```Network at boot(B2)``` and confirm by choosing ```yes```.
       
      Then leave the config by selecting ```Finish```
