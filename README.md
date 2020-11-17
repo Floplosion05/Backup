@@ -1,9 +1,9 @@
 # Backup
 Wherever there is something ```<<encapsulated>>``` you have to fill in your own credentials.
 ## Preparation
- - 1 . Download [Raspberry Pi Imager](https://downloads.raspberrypi.org/imager/imager_1.4.exe) and install Raspbian OS with it on an sd card
+ - 1 . Download [Raspberry Pi Imager](https://downloads.raspberrypi.org/imager/imager_1.4.exe) and install Raspberrypi OS Lite 32-Bitwith it on an SD card
  - 2 . Add an empty file called ssh with no extension in the root directory of the new flashed sd card
- - 3 . If using an Ethernet connection just plug in your sd card and LAN cable and your good to go; If you are using a Wifi connection add a file called [```wpa_supplicant.conf```](https://www.raspberrypi.org/documentation/configuration/wireless/wireless-cli.md) containing the following and proceed with the mentioned steps
+ - 3 . If using an Ethernet connection just plug in your sd card and LAN cable and you're good to go; If you are using a Wifi connection add a file called [```wpa_supplicant.conf```](https://www.raspberrypi.org/documentation/configuration/wireless/wireless-cli.md) containing the following and proceed with the mentioned steps
 ```
 ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev
 update_config=1
@@ -14,17 +14,22 @@ network={
  psk="<<Password for your wireless LAN>>"
 }
 ```
+   After powering the unit, give it some time to boot up
  - 4 . Get the Ip of your raspberrypi via your router
  - 5 . Open cmd and enter ```ssh pi@<<your raspberrypi's ip>>``` and when asked to type the default password ```raspberry```
- - 6 . As soon as your connected to the pi via ssh enter ```passwd``` and change the default password
+ - 6 . As soon as you're connected to the pi via ssh enter ```passwd``` and change the default password
  - 7 . Run ```sudo get update``` and ```sudo get upgrade```
- - 8 . Run ```sudo raspi-config``` go to ```System Options(1)``` and then to ```Network at boot(S6)``` and confirm by choosing ```yes``` then leave the config by selecting ```Finish```
+ - 8 . If ou're using a normal RaspberryPi:
+Run ```sudo raspi-config``` go to ```System Options(1)``` and then to ```Network at boot(S6)``` and confirm by choosing ```yes``` then leave the config by selecting ```Finish```
+       If you're using a Raspberrypi Zero:
+Run ```sudo raspi-config``` go to ```Boot Options(3)``` and then to ```Network at boot(B2)``` and confirm by choosing ```yes``` then leave the config by selecting ```Finish```
 
 ## Installation of linux packages via apt
-- 1 . ```sudo apt install mosquitto mosquitto-clients python3 python3-pip rsync```
+- 1 . ```sudo apt install mosquitto mosquitto-clients python3 python3-pip rsync git```
 
 ## Installation of the necessary scripts
 - 1 .```mkdir /home/pi/Documents; mkdir /home/pi/autostart; mkdir /home/pi/Logs; cd /home/pi/Documents; git clone https://github.com/Floplosion05/Backup; cp -r Backup/* /home/pi/Documents; rm -r -f Backup/; cd /home/pi/Documents; rm -f README.md; cp autostart/* /home/pi/autostart; rm -r -f autostart/```
+- 2 .Don't forget to change ur meross cloud credentials in line [12](https://github.com/Floplosion05/Backup/Python/arduino2meross.py#L12) of the arduino2meross.py file
 
 ## (Optional) Setting up [SMB](https://pimylifeup.com/raspberry-pi-samba/)
 - 1 . ```sudo apt install samba samba-common-bin```
@@ -43,7 +48,7 @@ public=no
 - 6 .Set a new Samba password by running ```sudo smbpasswd -a pi``` and then typing your new password
 - 7 .Then restart Samba using ```sudo systemctl restart smbd```
 
-## (optional) Setting up a Webserver with [Apache2](https://pimylifeup.com/raspberry-pi-apache/)
+## (Optional) Setting up a Webserver with [Apache2](https://pimylifeup.com/raspberry-pi-apache/)
 - 1 .```sudo apt install apache2 -y```
 - 2 .Add write permissions to the user by running:
 ```
@@ -63,7 +68,7 @@ sudo chown -R -f www-data:www-data /var/www/html
      Normally You will be prompted to select your editor of choice, I just use nano and type ```1```
 - 2 .At the bottom of the file add this line ```@reboot sh /home/pi/autostart/autostart.sh >/home/pi/Logs/cronlog.txt 2>&1```
 - 3 .Save and exit, when using nano do so by hitting ```Crtl+X```, ```Y``` and ```Enter```
-- 4 .You can check the cronjob by typing ```crontab -l```. This sjould return smething like this:
+- 4 .You can check the cronjob by typing ```crontab -l```. This should return smething like this:
 ```
 # Edit this file to introduce tasks to be run by cron.
 #
