@@ -21,14 +21,14 @@ network={
    After powering the unit, give it some time to boot up
 - Get the IP of your raspberry Pi via your router
 - Open Cmd and enter ```ssh pi@<<your raspberrypi's ip>>``` and when prompted provide the default password ```raspberry```
-- Once you're connected to the Pi via ssh, enter ```passwd``` and change the default password
+- Once connected to the Pi via ssh, enter ```passwd``` and change the default password
 - Run ```sudo get update``` and ```sudo get upgrade```
-- If you're using a regular Raspberry Pi:
-      - Run ```sudo raspi-config``` go to ```System Options(1)``` and then to ```Network at boot(S6)``` and confirm by choosing ```yes``` then leave the config by selecting ```Finish```
+- If you're using a regular Raspberry Pi:#
+     - Run ```sudo raspi-config``` go to ```System Options(1)``` and then to ```Network at boot(S6)``` and confirm by choosing ```yes``` then leave the config by selecting ```Finish```
 - If you're using a Raspberry Pi Zero:
-      - Run ```sudo raspi-config``` go to ```Boot Options(3)``` and then to ```Network at boot(B2)``` and confirm by choosing ```yes```.
+     - Run ```sudo raspi-config``` go to ```Boot Options(3)``` and then to ```Network at boot(B2)``` and confirm by choosing ```yes```.
       
-     Then leave the config by selecting ```Finish```
+     Exit the configuration by selecting ```Finish```
 
 ## Installation of linux packages via apt
 - ```sudo apt install mosquitto mosquitto-clients python3 python3-pip rsync git```
@@ -39,7 +39,7 @@ network={
 
 ## Installation of the necessary scripts
 - ```mkdir /home/pi/Documents; mkdir /home/pi/autostart; mkdir /home/pi/Logs; cd /home/pi/Documents; git clone https://github.com/Floplosion05/Backup; cp -r Backup/* /home/pi/Documents; rm -r -f Backup/; cd /home/pi/Documents; rm -f README.md; cp autostart/* /home/pi/autostart; rm -r -f autostart/```
-- Don't forget to change ur meross cloud credentials in line [13, 14](https://github.com/Floplosion05/Backup/blob/main/Python/arduino2meross.py#L13) of the arduino2meross.py file via the editor of your choice
+- Don't forget to change the meross cloud credentials in line [13, 14](https://github.com/Floplosion05/Backup/blob/main/Python/arduino2meross.py#L13) of the arduino2meross.py file with an editor of your choice
 
 ## (Optional) Setting up [SMB](https://pimylifeup.com/raspberry-pi-samba/)
 - ```sudo apt install samba samba-common-bin```
@@ -56,7 +56,7 @@ public=no
 ```
 - Save and exit, when using nano do so by hitting ```Crtl+X```, ```Y``` and ```Enter```
 - Set a new Samba password by running ```sudo smbpasswd -a pi``` and then typing your new password
-- Then restart Samba using ```sudo systemctl restart smbd```
+- Restart Samba using ```sudo systemctl restart smbd```
 
 ## (Optional) Setting up a Webserver with [Apache2](https://pimylifeup.com/raspberry-pi-apache/)
 - ```sudo apt install apache2 -y```
