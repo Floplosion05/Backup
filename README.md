@@ -3,7 +3,7 @@ Wherever there is something ```<<encapsulated>>``` you have to fill in your own 
 
 ## Preparation
  - Download [Raspberry Pi Imager](https://downloads.raspberrypi.org/imager/imager_1.4.exe) and install Raspberrypi OS Lite 32-Bit with it on a SD card
- - Add an empty file named "ssh" with **no** extension in the root directory of the newly flashed SD card
+ - Add an empty file named "ssh" **without** extension in the root directory of the newly flashed SD card
  - If you are using an Ethernet connection:
    - just plug in your sd card and LAN cable and you're good to go
  - If you are using a Wifi connection:
@@ -19,13 +19,13 @@ network={
 }
 ```
    After powering the unit, give it some time to boot up
-- Get the Ip of your raspberrypi via your router
+- Get the IP of your raspberrypi via your router
 - Open Cmd and enter ```ssh pi@<<your raspberrypi's ip>>``` and when asked to type the default password ```raspberry```
 - As soon as you're connected to the pi via ssh enter ```passwd``` and change the default password
 - Run ```sudo get update``` and ```sudo get upgrade```
-- If you're using a normal RaspberryPi:
+- If you're using a regular RaspberryPi:
       - Run ```sudo raspi-config``` go to ```System Options(1)``` and then to ```Network at boot(S6)``` and confirm by choosing ```yes``` then leave the config by selecting ```Finish```
-- 9 .If you're using a Raspberrypi Zero:
+- 9 .If you're using a RaspberryPi Zero:
       - Run ```sudo raspi-config``` go to ```Boot Options(3)``` and then to ```Network at boot(B2)``` and confirm by choosing ```yes```.
       
      Then leave the config by selecting ```Finish```
