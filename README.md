@@ -2,9 +2,12 @@
 Wherever there is something ```<<encapsulated>>``` you have to fill in your own credentials.
 
 ## Preparation
- - Download [Raspberry Pi Imager](https://downloads.raspberrypi.org/imager/imager_1.4.exe) and install Raspberrypi OS Lite 32-Bitwith it on an SD card
- - Add an empty file called ssh with no extension in the root directory of the new flashed sd card
- - If using an Ethernet connection just plug in your sd card and LAN cable and you're good to go; If you are using a Wifi connection add a file called [```wpa_supplicant.conf```](https://www.raspberrypi.org/documentation/configuration/wireless/wireless-cli.md) containing the following and proceed with the mentioned steps
+ - Download [Raspberry Pi Imager](https://downloads.raspberrypi.org/imager/imager_1.4.exe) and install Raspberrypi OS Lite 32-Bit with it on a SD card
+ - Add an empty file called ssh with **no** extension in the root directory of the newly flashed SD card
+ - If you are using an Ethernet connection:
+   - just plug in your sd card and LAN cable and you're good to go
+ - If you are using a Wifi connection:
+   - add a file called [```wpa_supplicant.conf```](https://www.raspberrypi.org/documentation/configuration/wireless/wireless-cli.md) containing the following and proceed with the mentioned steps
 ```
 ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev
 update_config=1
@@ -17,13 +20,15 @@ network={
 ```
    After powering the unit, give it some time to boot up
 - Get the Ip of your raspberrypi via your router
-- Open cmd and enter ```ssh pi@<<your raspberrypi's ip>>``` and when asked to type the default password ```raspberry```
+- Open Cmd and enter ```ssh pi@<<your raspberrypi's ip>>``` and when asked to type the default password ```raspberry```
 - As soon as you're connected to the pi via ssh enter ```passwd``` and change the default password
 - Run ```sudo get update``` and ```sudo get upgrade```
 - If you're using a normal RaspberryPi:
       - Run ```sudo raspi-config``` go to ```System Options(1)``` and then to ```Network at boot(S6)``` and confirm by choosing ```yes``` then leave the config by selecting ```Finish```
 - 9 .If you're using a Raspberrypi Zero:
-      - Run ```sudo raspi-config``` go to ```Boot Options(3)``` and then to ```Network at boot(B2)``` and confirm by choosing ```yes``` then leave the config by selecting ```Finish```
+      - Run ```sudo raspi-config``` go to ```Boot Options(3)``` and then to ```Network at boot(B2)``` and confirm by choosing ```yes```.
+      
+     Then leave the config by selecting ```Finish```
 
 ## Installation of linux packages via apt
 - ```sudo apt install mosquitto mosquitto-clients python3 python3-pip rsync git```
