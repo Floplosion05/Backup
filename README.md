@@ -18,7 +18,7 @@ network={
  psk="<<Password for your wireless LAN>>"
 }
 ```
-   After powering the unit, give it some time to boot up
+ After powering the unit, give it some time to boot up
 - Get the IP of your raspberry Pi via your router
 - Open Cmd and enter ```ssh pi@<<your raspberrypi's ip>>``` and when prompted provide the default password ```raspberry```
 - Once connected to the Pi via ssh, enter ```passwd``` and change the default password
