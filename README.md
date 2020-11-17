@@ -23,7 +23,7 @@ network={
 - Open Cmd and enter ```ssh pi@<<your raspberrypi's ip>>``` and when prompted provide the default password ```raspberry```
 - Once connected to the Pi via ssh, enter ```passwd``` and change the default password
 - Run ```sudo get update``` and ```sudo get upgrade```
-- If you're using a regular Raspberry Pi:#
+- If you're using a regular Raspberry Pi:
      - Run ```sudo raspi-config``` go to ```System Options(1)``` and then to ```Network at boot(S6)``` and confirm by choosing ```yes``` then leave the config by selecting ```Finish```
 - If you're using a Raspberry Pi Zero:
      - Run ```sudo raspi-config``` go to ```Boot Options(3)``` and then to ```Network at boot(B2)``` and confirm by choosing ```yes```.
