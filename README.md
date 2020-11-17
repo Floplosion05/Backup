@@ -33,6 +33,10 @@ network={
 ## Installation of linux packages via apt
 - ```sudo apt install mosquitto mosquitto-clients python3 python3-pip rsync git```
 
+## Configuring the MQTT-Broker
+- ```sudo systemctl enable mosquitto.service```
+- ```sudo systemctl start mosquitto.service```
+
 ## Installation of the necessary scripts
 - ```mkdir /home/pi/Documents; mkdir /home/pi/autostart; mkdir /home/pi/Logs; cd /home/pi/Documents; git clone https://github.com/Floplosion05/Backup; cp -r Backup/* /home/pi/Documents; rm -r -f Backup/; cd /home/pi/Documents; rm -f README.md; cp autostart/* /home/pi/autostart; rm -r -f autostart/```
 - Don't forget to change ur meross cloud credentials in line [13, 14](https://github.com/Floplosion05/Backup/blob/main/Python/arduino2meross.py#L13) of the arduino2meross.py file via the editor of your choice
