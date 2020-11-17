@@ -99,7 +99,7 @@ sudo chown -R -f www-data:www-data /var/www/html
 # For more information see the manual pages of crontab(5) and cron(8)
 #
 # m h  dom mon dow   command
-@reboot sh /home/pi/autostart/autostart.sh >/home/pi/Logs/cronlog 2>&1
+@reboot sh /home/pi/autostart/autostart.sh >/home/pi/Logs/cronlog.txt 2>&1
 ```
 ## Setting up Node-Red
 - Run ```bash <(curl -sL https://raw.githubusercontent.com/node-red/linux-installers/master/deb/update-nodejs-and-nodered)``` and confirm the following two questions with y for yes
