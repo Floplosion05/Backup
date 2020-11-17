@@ -94,4 +94,6 @@ sudo chown -R -f www-data:www-data /var/www/html
 #
 # m h  dom mon dow   command
 @reboot sh /home/pi/autostart/autostart.sh >/home/pi/Logs/cronlog 2>&1
-
+```
+## Setting up Node-Red
+- 1 .Run ```bash <(curl -sL https://raw.githubusercontent.com/node-red/linux-installers/master/deb/update-nodejs-and-nodered)``` and confirm the following two questions with y for yes
