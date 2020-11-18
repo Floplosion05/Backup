@@ -27,8 +27,8 @@ network={
    - run ```sudo raspi-config``` go to ```System Options(1)``` and then to ```Network at boot(S6)``` and confirm by choosing ```yes```
 - If you're using a Raspberry Pi Zero:
    - run ```sudo raspi-config``` go to ```Boot Options(3)``` and then to ```Network at boot(B2)``` and confirm by choosing ```yes```
-      
-     Exit the configuration by selecting ```Finish```
+
+Exit the configuration by selecting ```Finish```
 
 ## Installation of linux packages via apt
 - ```sudo apt install mosquitto mosquitto-clients python3 python3-pip rsync git```
