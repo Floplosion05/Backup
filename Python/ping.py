@@ -3,9 +3,6 @@ import paho.mqtt.publish as publish
 import threading
 import requests
 
-MQTT_SERVER = "192.168.100.98"
-
-
 def send_message():
     requests.get('https://maker.ifttt.com/trigger//with/key/b-l-V06AbzAM4E9Iv2aEn7NGMk6ZCr4dVaCETS_WV1a')
 
