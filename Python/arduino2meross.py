@@ -8,6 +8,7 @@ import time
 import threading
 import socket
 import json
+import sys
 
 REMOTE_SERVER = "www.google.com"
 EMAIL = "<<YOUR EMAIL HERE>>"
@@ -27,6 +28,7 @@ def is_connected():
      pass
   return False
 
+"""
 def event_handler(eventobj):
     if eventobj.event_type == MerossEventType.DEVICE_ONLINE_STATUS:
         print("Device online status changed: %s went %s" % (eventobj.device.name, eventobj.status))
@@ -45,6 +47,7 @@ def event_handler(eventobj):
 
     else:
         print("Unknown event!")
+"""
 
 def execute(plug_name, command):
     
@@ -66,14 +69,14 @@ def execute(plug_name, command):
                         plug.turn_on()
                         
                 elif command == 'getinfo':
-                    print(str(plug.get_status()))
+                    #print(str(plug.get_status()))
                     publish_msg("Hausautomation/" + plug_name, plug.get_status())
                     
             else:
                 print('Device: ' + plug_name + ' seems to be offline')
                 publish_msg("Hausautomation/" + plug_name, 'Offline')
         else:
-            print('Device: ' + plug_name + ' suopports power cinsumption reading :P')
+            print('Device: ' + plug_name + ' supports power consumption reading :P')
     else:
         if (command == 'getDevices'):
             print('Sending:')
@@ -88,18 +91,18 @@ def subscribe(topic='Hausautomation', host='localhost', port=1883, keepalive=60)
         client.subscribe(topic)
 
     def on_message(client, userdata, msg):
-        print(msg.topic + " " + msg.payload.decode())
+        #print(msg.topic + " " + msg.payload.decode())
         
         if msg.topic == topic:
             message_list = msg.payload.decode().split(' ')
-            print(message_list)
+            #print(message_list)
             
             if (message_list[0] in plugs and message_list[1] in commands):
-                print('Got plug: ' + message_list[0] + ' with command: ' + message_list[1])
+                #print('Got plug: ' + message_list[0] + ' with command: ' + message_list[1])
                 execute(message_list[0], message_list[1])
             
             elif (message_list[0] in commands2):
-                print('Got command: ' + message_list[0])
+                #print('Got command: ' + message_list[0])
                 execute(None, message_list[0])
                 
     client = mqtt.Client()
@@ -113,8 +116,6 @@ while not is_connected():
     time.sleep(0.5)
 
 manager = MerossManager.from_email_and_password(meross_email=EMAIL, meross_password=PASSWORD)
-
-manager.register_event_handler(event_handler)
 
 manager.start()
 
