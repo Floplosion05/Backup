@@ -17,7 +17,7 @@ def subscribe(topic='002', host='localhost', port=1883, keepalive=60):
         
         if msg.topic == '002':
             if msg.payload == b'pinghost':
-                publish.single('002', 'pingclient', hostname=MQTT_SERVER)
+                publish.single('002', 'pingclient', hostname='localhost')
                 timer.cancel()
                 timer.start()
     client = mqtt.Client()
