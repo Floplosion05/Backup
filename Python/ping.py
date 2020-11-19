@@ -24,6 +24,7 @@ def subscribe(topic='002', host='localhost', port=1883, keepalive=60):
                 timer.cancel()
                 timer = threading.Timer(400, send_message)
                 timer.start()
+    
     client = mqtt.Client()
     client.on_connect = on_connect
     client.on_message = on_message
