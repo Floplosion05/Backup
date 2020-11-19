@@ -4,7 +4,7 @@ import threading
 import requests
 
 def send_message():
-    requests.get('https://maker.ifttt.com/trigger//with/key/b-l-V06AbzAM4E9Iv2aEn7NGMk6ZCr4dVaCETS_WV1a')
+    requests.get(<<YOUR URL HERE>>)
 
 def subscribe(topic='002', host='localhost', port=1883, keepalive=60):
     
