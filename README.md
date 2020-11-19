@@ -66,7 +66,24 @@ public=no
 sudo usermod -a -G www-data pi
 sudo chown -R -f www-data:www-data /var/www/html
 ```
-- TBD
+- Then type ```sudo nano /etc/apache2/apache2.conf``` and find the lines (usually starts on line 170:
+```
+<Directory /var/www/>
+  Options Indexes FollowSymLinks
+  AllowOverride None
+  Require all granted
+</Directory>
+```
+and change it to:
+```
+<Directory /var/www/>
+  Options FollowSymLinks
+  AllowOverride None
+  Require all granted
+</Directory>
+```
+Save and exit
+- Then type ```sudo cp -r /home/pi/Documents/Shelly/* /var/www/html/```
 
 ## Installation of Python libraries via pip and git
 - ```pip3 install paho-mqtt bs4 requests```
