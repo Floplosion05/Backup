@@ -24,7 +24,11 @@ def is_connected():
 	return False
 
 def refresh_page():
-	page = requests.get(URL)
+	try:
+		page = requests.get(URL)
+	except Exception as e:
+		print(e)
+		return ''
 	soup = BeautifulSoup(page.content, 'html.parser')
 	result = int(soup.find("div", class_="checkin-number").text.replace("\n","").split("/",1)[0])
 	return result
