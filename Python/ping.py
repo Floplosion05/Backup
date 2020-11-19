@@ -34,5 +34,3 @@ def subscribe(topic='002', host='localhost', port=1883, keepalive=60):
 timer = threading.Timer(400, send_message)
 timer.start()
 subscribe()
-
-    
