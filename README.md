@@ -77,7 +77,11 @@ sudo chown -R -f www-data:www-data /var/www/html
 ## Creating a [Cronjob](https://www.raspberrypi.org/documentation/linux/usage/cron.md)
 - ```crontab -e```
      Normally you will be prompted to select your editor of choice, I just use nano and type ```1```
-- At the bottom of the file add this line ```@reboot sh /home/pi/autostart/autostart.sh >/home/pi/Logs/cronlog.txt 2>&1```
+- At the bottom of the file add these lines:
+```
+@reboot sh /home/pi/autostart/autostart.sh >/home/pi/Logs/cronlog.txt 2>&1```
+0 0 * * * rsync -avhp -e ssh pi@192.168.100.98:/home/pi/.node-red/flows_raspberrypi.json /home/pi/.node-red/flows.json >/home/pi/Logs/rsynclog.txt 2>&1 && sudo systemctl restart nodered
+```
 - Save and exit, when using nano do so by hitting ```Crtl+X```, ```Y``` and ```Enter```
 - You can check the cronjob by typing ```crontab -l```. This should return smething like this:
 ```
@@ -105,6 +109,7 @@ sudo chown -R -f www-data:www-data /var/www/html
 #
 # m h  dom mon dow   command
 @reboot sh /home/pi/autostart/autostart.sh >/home/pi/Logs/cronlog.txt 2>&1
+0 0 * * * rsync -avhp -e ssh pi@192.168.100.98:/home/pi/.node-red/flows_raspberrypi.json /home/pi/.node-red/flows.json >/home/pi/Logs/rsynclog.txt 2>&1 && sudo systemctl restart nodered
 ```
 ## Setting up Node-Red
 - Run ```bash <(curl -sL https://raw.githubusercontent.com/node-red/linux-installers/master/deb/update-nodejs-and-nodered)``` and confirm the following two questions with y for yes
