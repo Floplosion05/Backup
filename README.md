@@ -103,7 +103,7 @@ Save and exit
      Normally you will be prompted to select your editor of choice, I just use nano and type ```1```
 - At the bottom of the file add these lines:
 ```
-@reboot sh /home/pi/autostart/autostart.sh >/home/pi/Logs/cronlog.txt 2>&1```
+@reboot sh /home/pi/autostart/autostart.sh >/home/pi/Logs/cronlog.txt 2>&1
 0 0 * * * rsync -avhp -e ssh pi@<<Your Pi's IP>>:/home/pi/.node-red/flows_raspberrypi.json /home/pi/.node-red/flows.json >/home/pi/Logs/rsynclog.txt 2>&1 && sudo systemctl restart nodered
 ```
 - Save and exit, when using nano do so by hitting ```Crtl+X```, ```Y``` and ```Enter```
@@ -138,7 +138,7 @@ Save and exit
 ## Setting up Node-Red
 - Run ```bash <(curl -sL https://raw.githubusercontent.com/node-red/linux-installers/master/deb/update-nodejs-and-nodered)``` and confirm the following two questions with y for yes
 - ```sudo systemctl enable nodered.service; sudo systemctl start nodered.service```
-- ```cp -f -r /home/pi/Documents/NodeRed/* /home/pi/.node_red/;```
+- ```cp -f -r /home/pi/Documents/NodeRed/* /home/pi/.node-red/;```
 - Then point your browser at the Ip Adress of your pi and add the port: ```http://<<Your Pi's IP>>:1880``` to test the installation
 - Next click on the three horizontal lines in the top right corner and go to ```Manage palette```, then install each of these nodes:
 ```
