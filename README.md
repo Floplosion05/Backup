@@ -30,6 +30,13 @@ network={
 
 Exit the configuration by selecting ```Finish```
 
+## Configuring [SSH](https://serverpilot.io/docs/how-to-use-ssh-public-key-authentication/)
+- Run ```ssh-keygen``` and confirm the next 3 questions with ```Enter```
+- Next run this command with the IP of the target Pi ```ssh-copy-id pi@<<TARGETS IP>>``` and type enter password for the target Pi when asked
+
+To test the configured ssh connection just type ```ssh pi@<<TARGETS IP>>``` and use the same IP as before, you should be able to log into the pi without entering your password.
+This is later needed for smooth file-syncing
+
 ## Installation of linux packages via apt
 - ```sudo apt install mosquitto mosquitto-clients python3 python3-pip rsync git```
 
