@@ -5,7 +5,7 @@ import requests
 
 def send_message():
     print('Client unreachable')
-    requests.get(<<YOUR URL HERE>>)
+    requests.get('<<YOUR URL HERE>>')
 
 def subscribe(topic='002', host='localhost', port=1883, keepalive=60):
     
