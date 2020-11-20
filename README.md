@@ -86,6 +86,7 @@ and change it to:
 ```
 Save and exit
 - Then type ```sudo cp -r /home/pi/Documents/Shelly/* /var/www/html/```
+- Finally enter ```systemctl restart apache2.service```
 
 ## Installation of Python libraries via pip and git
 - ```pip3 install paho-mqtt bs4 requests```
