@@ -132,4 +132,4 @@ Save and exit
 - Run ```bash <(curl -sL https://raw.githubusercontent.com/node-red/linux-installers/master/deb/update-nodejs-and-nodered)``` and confirm the following two questions with y for yes
 - ```sudo systemctl enable nodered.service; sudo systemctl start nodered.service```
 - ```cp -f -r /home/pi/Documents/NodeRed/* /home/pi/.node_red/;```
-- Then point your browser at the Ip Adress of your pi and add the port: ```http://<<Your pi's IP>>:1880``` to test the installation
+- Then point your browser at the Ip Adress of your pi and add the port: ```http://<<Your Pi's IP>>:1880``` to test the installation
