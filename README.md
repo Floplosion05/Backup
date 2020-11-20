@@ -140,3 +140,18 @@ Save and exit
 - ```sudo systemctl enable nodered.service; sudo systemctl start nodered.service```
 - ```cp -f -r /home/pi/Documents/NodeRed/* /home/pi/.node_red/;```
 - Then point your browser at the Ip Adress of your pi and add the port: ```http://<<Your Pi's IP>>:1880``` to test the installation
+node-red-contrib-counter
+node-red-contrib-cpu
+node-red-contrib-device-stats
+node-red-contrib-googlehome
+node-red-contrib-google-oauth-calendar
+node-red-contrib-hs100
+node-red-contrib-moment
+node-red-contrib-presence-faker
+node-red-contrib-ui-level
+node-red-contrib-viera
+node-red-contrib-volumio
+node-red-dashboard
+node-red-node-openweathermap
+node-red-node-suncalc
+node-red-node-ui-list
