@@ -2,7 +2,7 @@
 Wherever there is something ```<<encapsulated>>``` you have to fill in your own credentials.
 
 ## Preparation
- - Download [Raspberry Pi Imager](https://downloads.raspberrypi.org/imager/imager_1.4.exe) and install Raspberrypi OS Lite 32-Bit with it on a SD card
+ - Download [Raspberry Pi Imager](https://downloads.raspberrypi.org/imager/imager_1.4.exe) and install Raspberrypi OS **Lite** 32-Bit with it on a SD card (Navigate to Raspberry Pi OS (other))
  - Add an empty file named "ssh" **without** an extension in the root directory of the newly flashed SD card
  - If you are using an Ethernet connection:
    - just plug in your sd card and LAN cable and you're good to go
