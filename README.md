@@ -140,7 +140,7 @@ Save and exit
 - ```sudo systemctl enable nodered.service; sudo systemctl start nodered.service```
 - ```cp -f -r /home/pi/Documents/NodeRed/* /home/pi/.node_red/;```
 - Then point your browser at the Ip Adress of your pi and add the port: ```http://<<Your Pi's IP>>:1880``` to test the installation
-
+- Next click on the three horizontal lines in the top right corner and go to ```Manage palette```, then install each of these nodes:
 ```
 node-red-contrib-counter
 node-red-contrib-cpu
@@ -158,3 +158,5 @@ node-red-node-openweathermap
 node-red-node-suncalc
 node-red-node-ui-list
 ```
+- Type ```sudo systemctl stop nodered```
+- Run ```rsync -avhp -e ssh pi@<<Your Pi's IP>>:/home/pi/.node-red/flows_raspberrypi.json /home/pi/.node-red/flows.json && sudo systemctl restart nodered
