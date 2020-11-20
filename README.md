@@ -41,7 +41,7 @@ This is later needed for smooth file-syncing
 
 ## Installation of the necessary scripts
 - ```mkdir /home/pi/Documents; mkdir /home/pi/autostart; mkdir /home/pi/Logs; cd /home/pi/Documents; git clone https://github.com/Floplosion05/Backup; cp -r Backup/* /home/pi/Documents; rm -r -f Backup/; cd /home/pi/Documents; rm -f README.md; cp autostart/* /home/pi/autostart; rm -r -f autostart/```
-- Don't forget to change the meross cloud credentials in line [13, 14](https://github.com/Floplosion05/Backup/blob/main/Python/arduino2meross.py#L13) of the arduino2meross.py file
+- Don't forget to change the meross cloud credentials in line [13, 14](https://github.com/Floplosion05/Backup/blob/main/Python/arduino2meross.py#L13) of the arduino2meross.py file (eg. typing ```nano /home/pi/Documents/Python/arduino2meross.py```)
 - Don't forget to change your url to be called in line [7](https://github.com/Floplosion05/Backup/blob/main/Python/ping.py#L7) of the ping.py file
 
 ## (Optional) Setting up [SMB](https://pimylifeup.com/raspberry-pi-samba/)
@@ -89,7 +89,7 @@ Save and exit
 
 ## Installation of Python libraries via pip and git
 - ```pip3 install paho-mqtt bs4 requests```
-- ```git clone ```[```https://github.com/Floplosion05/MerossIot```](https://github.com/Floplosion05/MerossIot)
+- ```cd /home/pi/Documents/; git clone ```[```https://github.com/Floplosion05/MerossIot```](https://github.com/Floplosion05/MerossIot)
 - ```cd MerossIot/```
 - ```sudo python3 setup.py install```
 
@@ -132,8 +132,9 @@ Save and exit
 ```
 ## Setting up Node-Red
 - Run ```bash <(curl -sL https://raw.githubusercontent.com/node-red/linux-installers/master/deb/update-nodejs-and-nodered)``` and confirm the following two questions with y for yes
-- ```sudo systemctl enable nodered.service; sudo systemctl start nodered.service```
+- ```sudo systemctl enable nodered.service```
 - ```cp -f -r /home/pi/Documents/NodeRed/* /home/pi/.node-red/;```
+- ```sudo systemctl start nodered.service```
 - Then point your browser at the Ip Adress of your pi and add the port: ```http://<<Your Pi's IP>>:1880``` to test the installation
 - Next click on the three horizontal lines in the top right corner and go to ```Manage palette```, then install each of these nodes:
 ```
