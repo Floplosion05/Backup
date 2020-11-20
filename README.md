@@ -19,22 +19,17 @@ network={
 }
 ```
  After powering the unit, give it some time to boot up
-- Get the IP of your raspberry Pi via your router
+- Get the IP of your raspberry Pi via your router (Usually the hostname is raspberry)
 - Open Cmd and enter ```ssh pi@<<Your Pi's IP>>``` and when prompted provide the default password ```raspberry```
 - Once connected to the Pi via ssh, enter ```passwd``` and change the default password
-- Run ```sudo get update``` and ```sudo get upgrade```
-- If you're using a regular Raspberry Pi:
-   - run ```sudo raspi-config``` go to ```System Options(1)``` and then to ```Network at boot(S6)``` and confirm by choosing ```yes```
-- If you're using a Raspberry Pi Zero:
-   - run ```sudo raspi-config``` go to ```Boot Options(3)``` and then to ```Network at boot(B2)``` and confirm by choosing ```yes```
-
-Exit the configuration by selecting ```Finish```
+- Run ```sudo apt-get update``` and ```sudo apt-get upgrade```
+- Next run ```sudo raspi-config``` go to ```System Options(1)``` and then to ```Network at boot(S6)``` and confirm by choosing ```yes``` and exit the configuration by selecting ```Finish```
 
 ## Configuring [SSH](https://serverpilot.io/docs/how-to-use-ssh-public-key-authentication/)
 - Run ```ssh-keygen``` and confirm the next 3 questions with ```Enter```
-- Next run this command with the IP of the target Pi ```ssh-copy-id pi@<<TARGETS IP>>``` and enter the password for the target Pi when asked
+- Next run this command with the IP of the target Pi ```ssh-copy-id pi@<<PRIMARY NODE'S IP>>``` and enter the password for the target Pi when asked
 
-To test the configured ssh connection just type ```ssh pi@<<TARGETS IP>>``` and use the same IP as before, you should be able to log into the pi without entering your password.
+To test the configured ssh connection just type ```ssh pi@<<PRIMARY NODE'S IP>>``` and use the same IP as before, you should be able to log into the pi without entering your password.
 This is later needed for smooth file-syncing
 
 ## Installation of linux packages via apt
@@ -104,7 +99,7 @@ Save and exit
 - At the bottom of the file add these lines:
 ```
 @reboot sh /home/pi/autostart/autostart.sh >/home/pi/Logs/cronlog.txt 2>&1
-0 0 * * * rsync -avhp -e ssh pi@<<Your Pi's IP>>:/home/pi/.node-red/flows_raspberrypi.json /home/pi/.node-red/flows.json >/home/pi/Logs/rsynclog.txt 2>&1 && sudo systemctl restart nodered
+0 0 * * * rsync -avhp -e ssh pi@<<PRIMARY NODE'S IP>>:/home/pi/.node-red/flows_raspberrypi.json /home/pi/.node-red/flows.json >/home/pi/Logs/rsynclog.txt 2>&1 && sudo systemctl restart nodered
 ```
 - Save and exit, when using nano do so by hitting ```Crtl+X```, ```Y``` and ```Enter```
 - You can check the cronjob by typing ```crontab -l```. This should return smething like this:
@@ -133,7 +128,7 @@ Save and exit
 #
 # m h  dom mon dow   command
 @reboot sh /home/pi/autostart/autostart.sh >/home/pi/Logs/cronlog.txt 2>&1
-0 0 * * * rsync -avhp -e ssh pi@<<Your Pi's IP>>:/home/pi/.node-red/flows_raspberrypi.json /home/pi/.node-red/flows.json >/home/pi/Logs/rsynclog.txt 2>&1 && sudo systemctl restart nodered
+0 0 * * * rsync -avhp -e ssh pi@<<PRIMARY NODE'S IP>>:/home/pi/.node-red/flows_raspberrypi.json /home/pi/.node-red/flows.json >/home/pi/Logs/rsynclog.txt 2>&1 && sudo systemctl restart nodered
 ```
 ## Setting up Node-Red
 - Run ```bash <(curl -sL https://raw.githubusercontent.com/node-red/linux-installers/master/deb/update-nodejs-and-nodered)``` and confirm the following two questions with y for yes
@@ -160,3 +155,4 @@ node-red-node-ui-list
 ```
 - Type ```sudo systemctl stop nodered```
 - Run ```rsync -avhp -e ssh pi@<<Your Pi's IP>>:/home/pi/.node-red/flows_raspberrypi.json /home/pi/.node-red/flows.json && sudo systemctl restart nodered```
+- Finally run ```sudo systemctl start nodered```
