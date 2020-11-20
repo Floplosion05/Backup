@@ -156,4 +156,3 @@ node-red-node-ui-list
 ```
 - Type ```sudo systemctl stop nodered```
 - Run ```rsync -avhp -e ssh pi@<<Your Pi's IP>>:/home/pi/.node-red/flows_raspberrypi.json /home/pi/.node-red/flows.json && sudo systemctl restart nodered```
-- Finally run ```sudo systemctl start nodered```
