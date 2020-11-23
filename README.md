@@ -157,3 +157,4 @@ node-red-node-ui-list
 ```
 - Type ```sudo systemctl stop nodered```
 - Run ```rsync -avhp -e ssh pi@<<PRIMARY NODE'S IP>>:/home/pi/.node-red/flows.json /home/pi/.node-red/flows.json; sudo systemctl restart nodered```
+- Using [enviroment variables](https://stackoverflow.com/questions/44298263/is-it-possible-to-declare-global-variables-in-node-red-and-use-them-on-the-node) in Node-Red
