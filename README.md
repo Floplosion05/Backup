@@ -23,7 +23,7 @@ network={
 - Open Cmd and enter ```ssh pi@<<Your Pi's IP>>``` and when prompted provide the default password ```raspberry```
 - Once connected to the Pi via ssh, enter ```passwd``` and change the default password
 - Run ```sudo apt-get update``` and ```sudo apt-get upgrade```
-- Next run ```sudo raspi-config``` go to ```System Options(1)``` and then to ```Network at boot(S6)``` and confirm by choosing ```yes``` and exit the configuration by selecting ```Finish```
+- Next run ```sudo raspi-config``` go to ```System Options(1) or Boot Options(3)``` and then to ```Network at Boot(S6) or Wait for Network at Boot(B2)``` and confirm by choosing ```yes```, then go to ```System Options(1) or Network Options(2)``` followed by ```Hostname(S4) or Hostname(N1)```, then choose a different hostname than your primary node's (eg ```raspberrypi2```) and exit the configuration by selecting ```Finish```. Normally you will be asked if you want to reboot, hit ```YES```
 
 ## Configuring [SSH](https://serverpilot.io/docs/how-to-use-ssh-public-key-authentication/)
 - Run ```ssh-keygen``` and confirm the next 3 questions with ```Enter```
