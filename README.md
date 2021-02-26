@@ -42,7 +42,7 @@ This is later needed for smooth file-syncing
 ## Installation of the necessary scripts
 - ```mkdir /home/pi/Documents; mkdir /home/pi/autostart; mkdir /home/pi/Logs; cd /home/pi/Documents; git clone https://github.com/Floplosion05/Backup; cp -r Backup/* /home/pi/Documents; rm -r -f Backup/; cd /home/pi/Documents; rm -f README.md; cp autostart/* /home/pi/autostart; rm -r -f autostart/```
 - Don't forget to change the meross cloud credentials in line [14, 15](https://github.com/Floplosion05/Backup/blob/main/Python/arduino2meross.py#L14) of the arduino2meross.py file (eg. typing ```nano /home/pi/Documents/Python/arduino2meross.py```)
-- Don't forget to change your url to be called in line [7](https://github.com/Floplosion05/Backup/blob/main/Python/ping.py#L7) of the ping.py file
+- Don't forget to change your url to be called in line [8](https://github.com/Floplosion05/Backup/blob/main/Python/ping.py#L8) of the ping.py file
 
 ## (Optional) Setting up [SMB](https://pimylifeup.com/raspberry-pi-samba/)
 - ```sudo apt install samba samba-common-bin```
