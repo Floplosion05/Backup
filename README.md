@@ -139,17 +139,24 @@ Save and exit
 - Then point your browser at the Ip Adress of your pi and add the port: ```http://<<Your Pi's IP>>:1880``` to test the installation
 - Next click on the three horizontal lines in the top right corner and go to ```Manage palette```, then install each of these nodes:
 ```
+node-red-contrib-car-bmw
+node-red-contrib-chunks-to-lines
 node-red-contrib-counter
 node-red-contrib-cpu
 node-red-contrib-device-stats
 node-red-contrib-googlehome
 node-red-contrib-google-oauth-calendar
+node-red-contrib-googlehome
 node-red-contrib-hs100
 node-red-contrib-moment
 node-red-contrib-presence-faker
+node-red-contrib-ui-artless-gauge
+node-red-contrib-ui-clock
 node-red-contrib-ui-level
+node-red-contrib-ui-media
+node-red-contrib-ui-time-scheduler
+node-red-contrib-ui-upload
 node-red-contrib-viera
-node-red-contrib-volumio
 node-red-dashboard
 node-red-node-openweathermap
 node-red-node-suncalc
