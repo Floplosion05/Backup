@@ -7,7 +7,7 @@ Wherever there is something ```<<encapsulated>>``` you have to fill in your own 
  - If you are using an Ethernet connection:
    - just plug in your sd card and LAN cable and you're good to go
  - If you are using a Wifi connection:
-   - add a file called [```wpa_supplicant.conf```](https://www.raspberrypi.org/documentation/configuration/wireless/wireless-cli.md) containing the following and proceed with the mentioned steps
+   - in the root directory of the sd card add a file called [```wpa_supplicant.conf```](https://www.raspberrypi.org/documentation/configuration/wireless/wireless-cli.md) containing the following and proceed with the mentioned steps
 ```
 ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev
 update_config=1
@@ -23,7 +23,7 @@ network={
 - Open Cmd and enter ```ssh pi@<<Your Pi's IP>>``` and when prompted provide the default password ```raspberry```
 - Once connected to the Pi via ssh, enter ```passwd``` and change the default password
 - Run ```sudo apt-get update``` and ```sudo apt-get upgrade```
-- Next run ```sudo raspi-config``` go to ```System Options(1) or Boot Options(3)``` and then to ```Network at Boot(S6) or Wait for Network at Boot(B2)``` and confirm by choosing ```yes```, then go to ```System Options(1) or Network Options(2)``` followed by ```Hostname(S4) or Hostname(N1)```, then choose a different hostname than your primary node's (eg ```raspberrypi2```) and exit the configuration by selecting ```Finish```. Normally you will be asked if you want to reboot, hit ```YES```
+- Next run ```sudo raspi-config``` go to ```System Options(1) or Boot Options(3)``` and then to ```Network at Boot(S6) or Wait for Network at Boot(B2)``` and confirm by choosing ```yes```, next go to ```Localisation Options(4) or Localisation Options(5)``` and set the correct language(```de_DE.UTF-8 UTF-8```) under ```Change Locale(I2) or Locale(L1)``` and the correct timezone(```Europe/Berlin```) under ```Change Time Zone(I2) or Timezone(L2)```, then go to ```System Options(1) or Network Options(2)``` followed by ```Hostname(S4) or Hostname(N1)```, then choose a different hostname than your primary node's (eg ```raspberrypi2```) and exit the configuration by selecting ```Finish```. Normally you will be asked if you want to reboot, hit ```YES```
 
 ## Configuring [SSH](https://serverpilot.io/docs/how-to-use-ssh-public-key-authentication/)
 - Run ```ssh-keygen``` and confirm the next 3 questions with ```Enter```
